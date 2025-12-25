@@ -37,12 +37,12 @@ wget https://github.com/cloudflare/cloudflared/releases/latest/download/cloudfla
 chmod +x cloudflared-linux-amd64
 mv cloudflared-linux-amd64 cloudflared
 ./cloudflared tunnel --url http://(YOUR_IP):8080
-
+```
 
 ---
 
-📱 Termux
-
+### 📱 Termux (Android)
+```bash
 pkg update && pkg upgrade
 pkg install python git wget openssl -y
 pip3 install flask colorama
@@ -54,11 +54,11 @@ Make It Publicly Accessible
 
 pkg install cloudflared
 cloudflared tunnel --url http://127.0.0.1:8080
-
+```
 
 ---
 
-Notes
+## Notes
 
 Ensure the Flask application is running on port 8080
 
@@ -70,7 +70,7 @@ Do not expose sensitive data or credentials
 
 ---
 
-Disclaimer
+## Disclaimer
 
 This project is provided for educational and testing purposes only.
 Any misuse or illegal use is not the responsibility of the developer.
